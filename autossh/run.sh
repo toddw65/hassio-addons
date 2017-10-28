@@ -27,7 +27,8 @@ fi
 echo "[INFO] public key is:"
 cat "${KEY_PATH}/autossh_rsa_key.pub"
 
-command_args="-M ${MONITOR_PORT} -N -q -o ServerAliveInterval=20 -o ServerAliveCountMax=3 ${USERNAME}@${HOSTNAME} -i ${KEY_PATH}/autossh_rsa_key"
+#command_args="-M ${MONITOR_PORT} -N -q -o ServerAliveInterval=20 -o ServerAliveCountMax=3 ${USERNAME}@${HOSTNAME} -i ${KEY_PATH}/autossh_rsa_key"
+command_args="-fN -o ServerAliveInterval=20 -o ServerAliveCountMax=3 ${USERNAME}@${HOSTNAME} -i ${KEY_PATH}/autossh_rsa_key"
 
 if [ ! -z "$REMOTE_FORWARDING" ]; then
   while read -r line; do
