@@ -5,7 +5,7 @@ CONFIG_PATH=/data/options.json
 KEY_PATH=/data/ssh_keys
 
 HOSTNAME=$(jq --raw-output ".hostname" $CONFIG_PATH)
-SSH_PORT=$(jq --raw-output ".ssh_port" $CONFIG_PATH)
+#SSH_PORT=$(jq --raw-output ".ssh_port" $CONFIG_PATH)
 USERNAME=$(jq --raw-output ".username" $CONFIG_PATH)
 
 
@@ -27,7 +27,7 @@ fi
 echo "[INFO] public key is:"
 cat "${KEY_PATH}/autossh_rsa_key.pub"
 
-command_args="-M ${MONITOR_PORT} -N -q -o ServerAliveInterval=20 -o ServerAliveCountMax=3 ${USERNAME}@${HOSTNAME} -p ${SSH_PORT} -i ${KEY_PATH}/autossh_rsa_key"
+command_args="-M ${MONITOR_PORT} -N -q -o ServerAliveInterval=20 -o ServerAliveCountMax=3 ${USERNAME}@${HOSTNAME} -i ${KEY_PATH}/autossh_rsa_key"
 
 if [ ! -z "$REMOTE_FORWARDING" ]; then
   while read -r line; do
