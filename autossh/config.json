@@ -1,6 +1,6 @@
 {
   "name": "Autossh",
-  "version": "0.21",
+  "version": "0.22",
   "slug": "autossh",
   "description": "Automatically connect to an ssh server for forwarding ports",
   "url": "https://github.com/toddw65/hassio-addons",
