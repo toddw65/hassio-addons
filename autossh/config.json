@@ -1,6 +1,6 @@
 {
   "name": "Autossh",
-  "version": "0.22",
+  "version": "0.23",
   "slug": "autossh",
   "description": "Automatically connect to an ssh server for forwarding ports",
   "url": "https://github.com/toddw65/hassio-addons",
@@ -10,7 +10,7 @@
   "options": {
     "hostname": "198.98.61.105",
     "username": "pi",
-    "remote_forwarding": ["127.0.0.1:8123:198.98.61.105:443"],
+    "remote_forwarding": ["443:localhost:8123"],
     "local_forwarding": [""],
     "other_ssh_options": "",
     "monitor_port": "0"
